@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coolify - The Open-Source, Self-Hostable PaaS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        .section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <nav class="bg-white shadow-md fixed w-full top-0 z-10">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-2xl font-bold text-gray-800">Coolify</a>
+                <div class="hidden md:flex space-x-4">
+                    <a href="#features" class="text-gray-600 hover:text-gray-800">Features</a>
+                    <a href="#installation" class="text-gray-600 hover:text-gray-800">Installation</a>
+                    <a href="#usage" class="text-gray-600 hover:text-gray-800">Usage</a>
+                    <a href="#api" class="text-gray-600 hover:text-gray-800">API</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 hover:text-gray-800 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="#features" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-200">Features</a>
+            <a href="#installation" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-200">Installation</a>
+            <a href="#usage" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-200">Usage</a>
+            <a href="#api" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-200">API</a>
+        </div>
+    </nav>
+
+    <header class="bg-white pt-24 pb-12">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold text-gray-800 mb-4">Coolify</h1>
+            <p class="text-xl text-gray-600">The open-source, self-hostable platform for deploying applications and managing servers. A cloud-like experience without vendor lock-in.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <section id="features" class="section mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Core Features</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Application Deployment & Server Management</h3>
+                    <p class="text-gray-600">Deploy applications from various sources like Git repositories, Dockerfiles, and Docker Compose files. Coolify provides a comprehensive system for managing your own servers, applications, and databases, offering a cloud-like experience without vendor lock-in.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Database Management</h3>
+                    <p class="text-gray-600">Define schemas, generate data, and manage core data models. Coolify supports various standalone databases like PostgreSQL, Redis, MongoDB, MySQL, and more, with automated backup and restore functionalities.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Docker Infrastructure</h3>
+                    <p class="text-gray-600">Coolify uses specialized Docker images for tooling, real-time communication, and development/production environments. This ensures consistency and efficiency in the deployment pipeline.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">HTTP Request Handling & API</h3>
+                    <p class="text-gray-600">A comprehensive API for managing resources, handling incoming HTTP requests, defining API endpoints, and processing webhooks from external services like GitHub and Stripe.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Asynchronous Operations</h3>
+                    <p class="text-gray-600">Leverages a queue system for background processing of tasks like deployments, server management, and scheduled operations, ensuring the UI remains fast and responsive.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Notification System</h3>
+                    <p class="text-gray-600">Get multi-channel, asynchronous alerts for critical application and server events via Email, Discord, Slack, Telegram, and more. You can configure which events you want to be notified about.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="installation" class="section mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Installation</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-gray-600 mb-4">Coolify can be installed with a single command. The installation script automates the setup of a Linux host, including dependency management, system validation, and the deployment of Coolify's components.</p>
+                <pre class="bg-gray-200 p-4 rounded-md text-sm"><code class="language-bash">wget -q https://get.coollabs.io/coolify/install.sh -O install.sh; sudo bash ./install.sh</code></pre>
+            </div>
+        </section>
+
+        <section id="usage" class="section mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Usage Examples</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <h3 class="text-2xl font-bold text-gray-800 mb-4">Deploying a Git-based Application</h3>
+                <p class="text-gray-600 mb-4">You can deploy an application directly from a GitHub repository. Coolify will handle the cloning, building, and deployment of your application.</p>
+                <pre class="bg-gray-200 p-4 rounded-md text-sm"><code class="language-bash"># In the Coolify UI, you would:
+1. Go to your project.
+2. Click on "Create Resource" and select "Application".
+3. Choose "Public Git Repository".
+4. Enter the URL of your repository (e.g., https://github.com/coollabsio/coolify-examples).
+5. Select the branch and build pack.
+6. Click "Deploy".</code></pre>
+                <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Deploying a Dockerfile-based Application</h3>
+                <p class="text-gray-600 mb-4">If your repository contains a Dockerfile, Coolify can build and deploy it as a container.</p>
+                <pre class="bg-gray-200 p-4 rounded-md text-sm"><code class="language-bash"># In the Coolify UI, when creating an application:
+1. Select your Git repository.
+2. Choose "Dockerfile" as the build pack.
+3. Coolify will detect and use the Dockerfile from your repository.
+4. Configure ports and other settings as needed.
+5. Click "Deploy".</code></pre>
+                <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Managing Environment Variables</h3>
+                <p class="text-gray-600 mb-4">You can securely manage environment variables for your applications and services.</p>
+                <pre class="bg-gray-200 p-4 rounded-md text-sm"><code class="language-bash"># In the Coolify UI, for a specific application:
+1. Go to the "Environment Variables" tab.
+2. Add your variables as key-value pairs.
+3. You can mark variables as "build-time" or "run-time".
+4. Secrets are encrypted at rest.
+5. Click "Save" and redeploy your application.</code></pre>
+                <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Setting up a Database Backup</h3>
+                <p class="text-gray-600 mb-4">Coolify can automatically back up your databases to local or S3-compatible storage.</p>
+                <pre class="bg-gray-200 p-4 rounded-md text-sm"><code class="language-bash"># In the Coolify UI, for a specific database:
+1. Go to the "Backups" tab.
+2. Configure the backup frequency (e.g., daily, weekly).
+3. Choose the storage destination (local or S3).
+4. Set the retention policy.
+5. Click "Save".</code></pre>
+                <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Synchronizing Docker Volumes</h3>
+                <p class="text-gray-600 mb-4">You can synchronize Docker volumes between two servers using the `sync_volume.sh` script. This is useful for migrating or replicating data.</p>
+                <pre class="bg-gray-200 p-4 rounded-md text-sm"><code class="language-bash"># Example of using the script
+bash /data/coolify/scripts/sync_volume.sh -s &lt;source_server_ip&gt; -d &lt;destination_server_ip&gt; -v &lt;volume_name&gt;</code></pre>
+            </div>
+        </section>
+
+        <section id="api" class="section mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">API</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-gray-600 mb-4">Coolify provides a comprehensive REST API for programmatic interaction. You can manage applications, databases, deployments, and more. API tokens can be generated from your user profile in the Coolify UI.</p>
+                <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Example: Get all applications</h3>
+                <pre class="bg-gray-200 p-4 rounded-md text-sm"><code class="language-bash">curl -X GET 'https://&lt;your-coolify-instance&gt;/api/v1/applications' \
+-H 'Authorization: Bearer &lt;your-api-token&gt;'</code></pre>
+                <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Example: Create an application</h3>
+                <pre class="bg-gray-200 p-4 rounded-md text-sm"><code class="language-json">{
+    "name": "my-new-app",
+    "git_repository": "https://github.com/user/repo.git",
+    "git_branch": "main",
+    "build_pack": "nixpacks",
+    "destination_id": "&lt;your-destination-id&gt;",
+    "environment_id": "&lt;your-environment-id&gt;"
+}</code></pre>
+                <h3 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Example: Get server status</h3>
+                <pre class="bg-gray-200 p-4 rounded-md text-sm"><code class="language-bash">curl -X GET 'https://&lt;your-coolify-instance&gt;/api/v1/servers/&lt;server-uuid&gt;' \
+-H 'Authorization: Bearer &lt;your-api-token&gt;'</code></pre>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white py-8">
+        <div class="container mx-auto px-4 text-center text-gray-600">
+            <p>&copy; 2025 Coolify. All rights reserved.</p>
+            <p class="mt-2">
+                <a href="https://github.com/coollabsio/coolify" class="hover:text-gray-800" target="_blank">GitHub</a> |
+                <a href="https://coolify.io/docs" class="hover:text-gray-800" target="_blank">Documentation</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
