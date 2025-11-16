@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coolify Examples</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Coolify Examples</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer" onclick="toggleCard(event, this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Bun</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <p class="text-gray-600 mb-4">A simple web server that responds to basic routes.</p>
+                <div class="mb-4">
+                    <span class="font-bold">Technology:</span>
+                    <span class="text-gray-600">Bun</span>
+                </div>
+                <div class="hidden">
+                    <h3 class="font-bold mb-2">Commands:</h3>
+                    <ul class="list-disc list-inside">
+                        <li><code class="bg-gray-200 p-1 rounded">bun install</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">bun start</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">bun dev</code></li>
+                    </ul>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="deploy('Bun', this)">
+                    Deploy
+                </button>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer" onclick="toggleCard(event, this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Node.js</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <p class="text-gray-600 mb-4">A simple web server with several routes, including health checks and environment variable inspection.</p>
+                <div class="mb-4">
+                    <span class="font-bold">Technology:</span>
+                    <span class="text-gray-600">Node.js with Fastify</span>
+                </div>
+                <div class="hidden">
+                    <h3 class="font-bold mb-2">Commands:</h3>
+                    <ul class="list-disc list-inside">
+                        <li><code class="bg-gray-200 p-1 rounded">npm install</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">npm start</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">npm run dev</code></li>
+                    </ul>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="deploy('Node.js', this)">
+                    Deploy
+                </button>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer" onclick="toggleCard(event, this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Next.js (SSR)</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <p class="text-gray-600 mb-4">A standard Next.js application with server-side rendering.</p>
+                <div class="mb-4">
+                    <span class="font-bold">Technology:</span>
+                    <span class="text-gray-600">Next.js (Server-Side Rendering)</span>
+                </div>
+                <div class="hidden">
+                    <h3 class="font-bold mb-2">Commands:</h3>
+                    <ul class="list-disc list-inside">
+                        <li><code class="bg-gray-200 p-1 rounded">npm install</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">npm run build</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">npm start</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">npm run dev</code></li>
+                    </ul>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="deploy('Next.js (SSR)', this)">
+                    Deploy
+                </button>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer" onclick="toggleCard(event, this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Flask</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <p class="text-gray-600 mb-4">A simple web server that renders an HTML template.</p>
+                <div class="mb-4">
+                    <span class="font-bold">Technology:</span>
+                    <span class="text-gray-600">Python with Flask</span>
+                </div>
+                <div class="hidden">
+                    <h3 class="font-bold mb-2">Commands:</h3>
+                    <ul class="list-disc list-inside">
+                        <li><code class="bg-gray-200 p-1 rounded">pip install -r requirements.txt</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">python app.py</code></li>
+                    </ul>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="deploy('Flask', this)">
+                    Deploy
+                </button>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer" onclick="toggleCard(event, this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Elixir (Phoenix)</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <p class="text-gray-600 mb-4">A Phoenix application.</p>
+                <div class="mb-4">
+                    <span class="font-bold">Technology:</span>
+                    <span class="text-gray-600">Elixir with Phoenix</span>
+                </div>
+                <div class="hidden">
+                    <h3 class="font-bold mb-2">Commands:</h3>
+                    <ul class="list-disc list-inside">
+                        <li><code class="bg-gray-200 p-1 rounded">mix deps.get</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">mix ecto.setup</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">mix phx.server</code></li>
+                    </ul>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="deploy('Elixir (Phoenix)', this)">
+                    Deploy
+                </button>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer" onclick="toggleCard(event, this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Laravel</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <p class="text-gray-600 mb-4">A standard Laravel application.</p>
+                <div class="mb-4">
+                    <span class="font-bold">Technology:</span>
+                    <span class="text-gray-600">PHP with Laravel</span>
+                </div>
+                <div class="hidden">
+                    <h3 class="font-bold mb-2">Commands:</h3>
+                    <ul class="list-disc list-inside">
+                        <li><code class="bg-gray-200 p-1 rounded">composer install</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">php artisan key:generate</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">php artisan serve</code></li>
+                    </ul>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="deploy('Laravel', this)">
+                    Deploy
+                </button>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer" onclick="toggleCard(event, this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Static Website</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <p class="text-gray-600 mb-4">A simple static website.</p>
+                <div class="mb-4">
+                    <span class="font-bold">Technology:</span>
+                    <span class="text-gray-600">HTML</span>
+                </div>
+                <div class="hidden">
+                    <h3 class="font-bold mb-2">Commands:</h3>
+                    <ul class="list-disc list-inside">
+                        <li><code class="bg-gray-200 p-1 rounded">Open index.html in a web browser.</code></li>
+                    </ul>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="deploy('Static Website', this)">
+                    Deploy
+                </button>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer" onclick="toggleCard(event, this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Docker Compose</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <p class="text-gray-600 mb-4">A project that uses Docker Compose to orchestrate multiple services, including a custom-built API, a Postgres database, and other services.</p>
+                <div class="mb-4">
+                    <span class="font-bold">Technology:</span>
+                    <span class="text-gray-600">Docker Compose</span>
+                </div>
+                <div class="hidden">
+                    <h3 class="font-bold mb-2">Commands:</h3>
+                    <ul class="list-disc list-inside">
+                        <li><code class="bg-gray-200 p-1 rounded">docker-compose up -d</code></li>
+                    </ul>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="deploy('Docker Compose', this)">
+                    Deploy
+                </button>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer" onclick="toggleCard(event, this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Astro (Server)</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <p class="text-gray-600 mb-4">An Astro application configured for server-side rendering.</p>
+                <div class="mb-4">
+                    <span class="font-bold">Technology:</span>
+                    <span class="text-gray-600">Astro</span>
+                </div>
+                <div class="hidden">
+                    <h3 class="font-bold mb-2">Commands:</h3>
+                    <ul class="list-disc list-inside">
+                        <li><code class="bg-gray-200 p-1 rounded">npm install</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">npm run build</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">npm start</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">npm run dev</code></li>
+                    </ul>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="deploy('Astro (Server)', this)">
+                    Deploy
+                </button>
+            </div>
+            <div class="bg-white rounded-lg shadow-md p-6 cursor-pointer" onclick="toggleCard(event, this)">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Vue.js (SSR)</h2>
+                    <svg class="w-6 h-6 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </div>
+                <p class="text-gray-600 mb-4">A Vue.js application with server-side rendering using Express.</p>
+                <div class="mb-4">
+                    <span class="font-bold">Technology:</span>
+                    <span class="text-gray-600">Vue.js with Express</span>
+                </div>
+                <div class="hidden">
+                    <h3 class="font-bold mb-2">Commands:</h3>
+                    <ul class="list-disc list-inside">
+                        <li><code class="bg-gray-200 p-1 rounded">npm install</code></li>
+                        <li><code class="bg-gray-200 p-1 rounded">npm start</code></li>
+                    </ul>
+                </div>
+                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="deploy('Vue.js (SSR)', this)">
+                    Deploy
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="modal" class="fixed top-0 left-0 w-full h-full bg-gray-800 bg-opacity-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 id="modal-title" class="text-2xl font-bold text-gray-800 mb-4">Deploying...</h2>
+            <p id="modal-body" class="text-gray-600 mb-4">Please wait while we deploy your application.</p>
+            <button id="modal-close" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onclick="closeModal()">
+                Close
+            </button>
+        </div>
+    </div>
+    <script>
+        function toggleCard(event, card) {
+            if (event.target.tagName.toLowerCase() === 'button') {
+                return;
+            }
+            const content = card.querySelector('.hidden');
+            const icon = card.querySelector('svg');
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        function deploy(appName, button) {
+            const modal = document.getElementById('modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
+            const modalClose = document.getElementById('modal-close');
+
+            modalTitle.innerText = `Deploying ${appName}...`;
+            modalBody.innerText = 'Please wait while we deploy your application.';
+            modalClose.classList.add('hidden');
+            modal.classList.remove('hidden');
+
+            button.disabled = true;
+            button.innerHTML = '<svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24"></svg>Deploying...';
+
+            setTimeout(() => {
+                modalTitle.innerText = 'Deployment Successful!';
+                modalBody.innerText = `${appName} has been deployed.`;
+                modalClose.classList.remove('hidden');
+                button.disabled = false;
+                button.innerHTML = 'Deploy';
+            }, 2000);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
