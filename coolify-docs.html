@@ -12,6 +12,19 @@
         .section {
             scroll-margin-top: 80px;
         }
+        @keyframes pop-in {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .card {
+            animation: pop-in 0.5s ease-out forwards;
+        }
     </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
@@ -51,29 +64,35 @@
         <section id="features" class="section mb-12">
             <h2 class="text-3xl font-bold text-gray-800 mb-6">Core Features</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="bg-white rounded-lg shadow-md p-6 card">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Application Deployment & Server Management</h3>
-                    <p class="text-gray-600">Deploy applications from various sources like Git repositories, Dockerfiles, and Docker Compose files. Coolify provides a comprehensive system for managing your own servers, applications, and databases, offering a cloud-like experience without vendor lock-in.</p>
+                    <p class="text-gray-600 mb-4">Deploy applications from various sources like Git repositories, Dockerfiles, and Docker Compose files. Coolify provides a comprehensive system for managing your own servers, applications, and databases, offering a cloud-like experience without vendor lock-in.</p>
+                    <p class="text-gray-600 mt-4"><b>Examples:</b> You can deploy applications built with Node.js, Next.js, Flask, Laravel, Vue.js, Astro, Django, and more.</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="bg-white rounded-lg shadow-md p-6 card" style="animation-delay: 0.1s;">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Database Management</h3>
-                    <p class="text-gray-600">Define schemas, generate data, and manage core data models. Coolify supports various standalone databases like PostgreSQL, Redis, MongoDB, MySQL, and more, with automated backup and restore functionalities.</p>
+                    <p class="text-gray-600 mb-4">Define schemas, generate data, and manage core data models. Coolify supports various standalone databases with automated backup and restore functionalities.</p>
+                    <p class="text-gray-600 mt-4"><b>Supported Databases:</b> PostgreSQL, Redis, MongoDB, MySQL, MariaDB, KeyDB, Dragonfly, and ClickHouse.</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="bg-white rounded-lg shadow-md p-6 card" style="animation-delay: 0.2s;">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Docker Infrastructure</h3>
-                    <p class="text-gray-600">Coolify uses specialized Docker images for tooling, real-time communication, and development/production environments. This ensures consistency and efficiency in the deployment pipeline.</p>
+                    <p class="text-gray-600 mb-4">Coolify uses specialized Docker images for tooling, real-time communication, and development/production environments. This ensures consistency and efficiency in the deployment pipeline.</p>
+                    <p class="text-gray-600 mt-4"><b>Benefit:</b> Docker provides a consistent environment for your applications, from development to production, reducing the "it works on my machine" problem.</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="bg-white rounded-lg shadow-md p-6 card" style="animation-delay: 0.3s;">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">HTTP Request Handling & API</h3>
-                    <p class="text-gray-600">A comprehensive API for managing resources, handling incoming HTTP requests, defining API endpoints, and processing webhooks from external services like GitHub and Stripe.</p>
+                    <p class="text-gray-600 mb-4">A comprehensive API for managing resources, handling incoming HTTP requests, defining API endpoints, and processing webhooks from external services like GitHub and Stripe.</p>
+                    <p class="text-gray-600 mt-4"><b>Benefit:</b> The API allows you to automate your infrastructure and integrate Coolify with your existing tools and workflows.</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="bg-white rounded-lg shadow-md p-6 card" style="animation-delay: 0.4s;">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Asynchronous Operations</h3>
-                    <p class="text-gray-600">Leverages a queue system for background processing of tasks like deployments, server management, and scheduled operations, ensuring the UI remains fast and responsive.</p>
+                    <p class="text-gray-600 mb-4">Leverages a queue system for background processing of tasks like deployments, server management, and scheduled operations, ensuring the UI remains fast and responsive.</p>
+                    <p class="text-gray-600 mt-4"><b>Benefit:</b> Long-running tasks don't block the user interface, providing a smoother user experience.</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-md p-6">
+                <div class="bg-white rounded-lg shadow-md p-6 card" style="animation-delay: 0.5s;">
                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Notification System</h3>
-                    <p class="text-gray-600">Get multi-channel, asynchronous alerts for critical application and server events via Email, Discord, Slack, Telegram, and more. You can configure which events you want to be notified about.</p>
+                    <p class="text-gray-600 mb-4">Get multi-channel, asynchronous alerts for critical application and server events. You can configure which events you want to be notified about.</p>
+                    <p class="text-gray-600 mt-4"><b>Supported Channels:</b> Email, Discord, Slack, Telegram, Pushover, and Webhooks.</p>
                 </div>
             </div>
         </section>
@@ -126,6 +145,35 @@
                 <p class="text-gray-600 mb-4">You can synchronize Docker volumes between two servers using the `sync_volume.sh` script. This is useful for migrating or replicating data.</p>
                 <pre class="bg-gray-200 p-4 rounded-md text-sm"><code class="language-bash"># Example of using the script
 bash /data/coolify/scripts/sync_volume.sh -s &lt;source_server_ip&gt; -d &lt;destination_server_ip&gt; -v &lt;volume_name&gt;</code></pre>
+            </div>
+        </section>
+
+        <section id="technologies" class="section mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6">Technologies in Action</h2>
+            <div class="bg-white rounded-lg shadow-md p-6">
+                <p class="text-gray-600 mb-4">Coolify is a powerful platform for deploying applications built with a wide range of modern technologies. While it's difficult to know which popular sites are deployed with Coolify itself (since it's self-hosted), we can look at popular sites that use the technologies that Coolify supports.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-6">
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Laravel</h3>
+                        <p class="text-gray-600">A popular PHP framework for building web applications. Many businesses and startups use Laravel for its elegant syntax and robust features.</p>
+                        <p class="text-gray-600 mt-2"><b>Examples:</b> Barchart, Laracasts, and many more.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Node.js</h3>
+                        <p class="text-gray-600">A JavaScript runtime for building fast and scalable network applications. It's used by many large companies for their backend services.</p>
+                        <p class="text-gray-600 mt-2"><b>Examples:</b> Netflix, Uber, LinkedIn, and PayPal.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">PostgreSQL</h3>
+                        <p class="text-gray-600">A powerful, open-source object-relational database system. It's known for its reliability, feature robustness, and performance.</p>
+                        <p class="text-gray-600 mt-2"><b>Examples:</b> Instagram, Spotify, and Twitch.</p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">Docker</h3>
+                        <p class="text-gray-600">A platform for developing, shipping, and running applications in containers. It's the foundation of modern DevOps and CI/CD pipelines.</p>
+                        <p class="text-gray-600 mt-2"><b>Examples:</b> Docker is used by countless companies, including Google, Amazon, and Microsoft, to power their infrastructure.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
